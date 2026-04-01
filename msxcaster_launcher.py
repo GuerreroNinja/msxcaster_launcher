@@ -160,7 +160,7 @@ class Launcher(QMainWindow):
     # ---------------- Extract Game / Command ----------------
     def extract_game_command(self):
         if not self.cas_path:
-            self.game_lbl.setText("Game: -")
+            self.game_lbl.setText("Found: -")
             self.command_lbl.setText("Command: -")
             return
         try:
@@ -186,11 +186,11 @@ class Launcher(QMainWindow):
                         else:
                             command = '-'
                         break
-            self.game_lbl.setText(f"Game: {game}")
+            self.game_lbl.setText(f"Found: {game}")
             # Resaltamos el comando
             self.command_lbl.setText(f'Command: <b><span style="color:green">{command}</span></b>')
         except Exception:
-            self.game_lbl.setText("Game: -")
+            self.game_lbl.setText("Found: -")
             self.command_lbl.setText("Command: -")
 
     # ---------------- Update CAS Info con coloreado ----------------
